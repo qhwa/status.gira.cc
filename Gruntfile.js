@@ -48,7 +48,7 @@ module.exports = function(grunt) {
                 options: {
                     livereload: true
                 },
-                files: ['app/frontend/public/js/application.js', 'app/frontend/public/css/app.css', 'app/frontend/public/css/main.css', 'app/frontend/public/css/normalize.css']
+                files: ['app/frontend/public/js/application.js', 'app/frontend/public/css/app.css.css', 'app/frontend/public/css/app.css', 'app/frontend/public/css/main.css', 'app/frontend/public/css/normalize.css']
             },
             styles: {
                 files: ['app/frontend/styles/app.css.scss'],

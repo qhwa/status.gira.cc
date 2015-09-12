@@ -1,7 +1,37 @@
+@import 'bootstrap/bootstrap';
+
 html {
   body {
     p {
       color: #cccccc;
     }
+
   }
 }
+
+.status-item {
+  .succ { display: none; }
+  .fail { display: none; }
+
+  &.online {
+    .succ {
+      display: inline;
+    }
+
+    .fail {
+      display: none;
+    }
+  }
+  
+  &.offline {
+    .succ {
+      display: none;
+    }
+
+    .fail {
+      display: inline;
+    }
+  }
+}
+
+

@@ -35,7 +35,7 @@ module Main
     end
 
     get '/shadow/secondary' do
-      ping_result Net::Ping::TCP.new('hk2.gira.cc', 80)
+      ping_result Net::Ping::TCP.new('hk1.gira.cc', 80)
     end
 
     def ping_result ping

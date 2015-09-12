@@ -1,4 +1,27 @@
 (function() {
+  var checkOnline;
+
+  checkOnline = function(dom, uri) {
+    dom = $(dom);
+    $(dom).removeClass(['online', 'offline']);
+    $('.checking', dom).show();
+    return $.ajax(uri).done(function(data) {
+      var ol;
+      ol = data === 'online';
+      $('.checking', dom).hide();
+      return dom.toggleClass('online', ol).toggleClass('offline', !ol);
+    });
+  };
+
+  jQuery(function($) {
+    checkOnline($('#web-primary'), 'web/primary');
+    checkOnline($('#web-secondary'), 'web/secondary');
+    checkOnline($('#tunnel-primary'), 'tunnel/primary');
+    checkOnline($('#tunnel-secondary'), 'tunnel/secondary');
+    checkOnline($('#shadow-primary'), 'shadow/primary');
+    return checkOnline($('#shadow-secondary'), 'shadow/secondary');
+  });
+
   (function() {
     var console, length, method, methods, noop, _results;
     noop = function() {};
