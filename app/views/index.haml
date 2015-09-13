@@ -1,57 +1,65 @@
-%nav.navbar.navbar-light
-  %a(href="https://gira.cc") gira.cc
-
 .container
+  %nav.navbar.navbar-light
+    %a.brand(href="https://gira.cc")
+      %img(src="images/logo.png" height="20" alt="gira.cc")
+
   %p
-    %img(src="images/logo.png" height="20")
 
   %p.lead
-    以下是 gira.cc 集群的状态。
+    gira.cc 集群的状态:
 
-  #web-primary.status-item
-    %h4
-      网站主服务
-      %small
-        %span.checking 检查中
-        %span.succ.label.label-success 正常
-        %span.fail.label.label-default 异常
+  .col-sm-12
+    %dl.dl-horizontal
+      %dt.col-sm-2 web - 网站 / pac 服务
+      %dd.col-sm-10
+        #web-primary.status-item
+          primary
+          %small
+            %span.checking 检查中
+            %span.succ.label.label-success 正常
+            %span.fail.label.label-default 异常
 
-  #web-secondary.status-item
-    %h4
-      网站备用服务
-      %small
-        %span.checking 检查中
-        %span.succ.label.label-success正常
-        %span.fail.label.label-default 异常
+        #web-secondary.status-item
+          secondary
+          %small
+            %span.checking 检查中
+            %span.succ.label.label-success正常
+            %span.fail.label.label-default 异常
 
-  #tunnel-primary.status-item
-    %h4
-      通道入口 主服务
-      %small
-        %span.checking 检查中
-        %span.succ.label.label-success正常
-        %span.fail.label.label-default 异常
+      %dt.col-sm-2 tunnel - 代理前端
+      %dd.col-sm-10
 
-  #tunnel-secondary.status-item
-    %h4
-      通道入口 备用服务
-      %small
-        %span.checking 检查中
-        %span.succ.label.label-success正常
-        %span.fail.label.label-default 异常
+        #tunnel-primary.status-item
+          primary
+          %small
+            %span.checking 检查中
+            %span.succ.label.label-success正常
+            %span.fail.label.label-default 异常
 
-  #shadow-primary.status-item
-    %h4
-      通道出口 主服务
-      %small
-        %span.checking 检查中
-        %span.succ.label.label-success正常
-        %span.fail.label.label-default 异常
+        #tunnel-secondary.status-item
+          secondary
+          %small
+            %span.checking 检查中
+            %span.succ.label.label-success正常
+            %span.fail.label.label-default 异常
 
-  #shadow-secondary.status-item
-    %h4
-      通道出口 备用服务
-      %small
-        %span.checking 检查中
-        %span.succ.label.label-success正常
-        %span.fail.label.label-default 异常
+      %dt.col-sm-2 shadow - 代理后端
+      %dd.col-sm-10
+        #shadow-primary.status-item
+          primary
+          %small
+            %span.checking 检查中
+            %span.succ.label.label-success正常
+            %span.fail.label.label-default 异常
+
+        #shadow-secondary.status-item
+          secondary
+          %small
+            %span.checking 检查中
+            %span.succ.label.label-success正常
+            %span.fail.label.label-danger 异常
+
+
+  有问题请联系 
+  %script
+    document.write(decodeURIComponent(decodeURIComponent('%253Ca%2520href%253D%2522mailto%253Aqhwa%2540gira.cc%2522%253Eqhwa%2540gira.cc%253C%252Fa%253E')));
