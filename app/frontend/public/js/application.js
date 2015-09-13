@@ -14,12 +14,18 @@
   };
 
   jQuery(function($) {
-    checkOnline($('#web-primary'), 'web/primary');
-    checkOnline($('#web-secondary'), 'web/secondary');
-    checkOnline($('#tunnel-primary'), 'tunnel/primary');
-    checkOnline($('#tunnel-secondary'), 'tunnel/secondary');
-    checkOnline($('#shadow-primary'), 'shadow/primary');
-    return checkOnline($('#shadow-secondary'), 'shadow/secondary');
+    var checkAll;
+    checkAll = function() {
+      checkOnline($('#web-primary'), 'web/primary');
+      checkOnline($('#web-secondary'), 'web/secondary');
+      checkOnline($('#tunnel-primary'), 'tunnel/primary');
+      checkOnline($('#tunnel-secondary'), 'tunnel/secondary');
+      checkOnline($('#shadow-primary'), 'shadow/primary');
+      checkOnline($('#shadow-secondary'), 'shadow/secondary');
+      console.log('check');
+      return setTimeout(checkAll, 10000);
+    };
+    return checkAll();
   });
 
   (function() {

@@ -12,9 +12,15 @@ checkOnline = (dom, uri) ->
 
 jQuery ($) ->
 
-  checkOnline $('#web-primary'), 'web/primary'
-  checkOnline $('#web-secondary'), 'web/secondary'
-  checkOnline $('#tunnel-primary'), 'tunnel/primary'
-  checkOnline $('#tunnel-secondary'), 'tunnel/secondary'
-  checkOnline $('#shadow-primary'), 'shadow/primary'
-  checkOnline $('#shadow-secondary'), 'shadow/secondary'
+  checkAll = ->
+    checkOnline $('#web-primary'), 'web/primary'
+    checkOnline $('#web-secondary'), 'web/secondary'
+    checkOnline $('#tunnel-primary'), 'tunnel/primary'
+    checkOnline $('#tunnel-secondary'), 'tunnel/secondary'
+    checkOnline $('#shadow-primary'), 'shadow/primary'
+    checkOnline $('#shadow-secondary'), 'shadow/secondary'
+
+    console.log 'check'
+    setTimeout checkAll, 10000
+
+  checkAll()
